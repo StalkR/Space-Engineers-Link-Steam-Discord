@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<PluginManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Link Steam Discord</Name>
+  <Guid>64827390-c847-41fb-adc3-2719b1d1b536</Guid>
+  <Repository>StalkR/Space-Engineers-Link-Steam-Discord</Repository>
+  <Version>v1.0.1</Version>
+  <Dependencies></Dependencies>
+</PluginManifest>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="StalkR.LinkSteamDiscord.ConfigUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="600">
+    <StackPanel>
+        <Button Width="70" Content="Save Config" Click="SaveConfig_OnClick" HorizontalAlignment="Left" Margin="6"/>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Backend URL:"/>
+            <TextBox Width="450" Height="19" Text="{Binding Backend}" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

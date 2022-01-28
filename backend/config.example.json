@@ -1,0 +1,15 @@
+{
+  "listen": ":8080",
+  "base_url": "https://example.com/",
+  "secret": "put some random, used to authenticate state",
+  "discord": {
+    "client_id": "client id from https://discord.com/developers/applications",
+    "client_secret": "corresponding client secret"
+  },
+  "api_keys": [
+    "put some random alphanum",
+    "add and distribute as many as you want",
+    "it controls who can query via /lookup"
+  ],
+  "database": "mappings.db"
+}

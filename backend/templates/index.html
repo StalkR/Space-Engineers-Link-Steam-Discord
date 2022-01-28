@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: black;
+  color: white;
+  font-size: x-large;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<p>
+{{if not .SteamID}}
+
+  Link Steam/Discord, step 1/2
+  <br>
+    <br>
+  <a href="/steam"><img src="../img/steam-login.png"></a>
+  <br>
+
+{{else}}
+
+  {{if not .DiscordID}}
+    Link Steam/Discord, step 2/2
+    <br>
+    <br>
+    <a href="/discord"><img src="../img/discord-login.png"></a>
+
+  {{else}}
+    Congratulations! You linked your
+    <a href="https://steamcommunity.com/profiles/{{.SteamID}}">Steam</a>
+    &amp;
+    <a href="https://discord.com/users/{{.DiscordID}}">Discord</a>.
+    <br>
+    You may now close this window and get back to the game.
+    <br>
+    <br>
+    <a href="/forget">Forget</a> this link.
+    <a href="/logout">Logout</a> and save another link.
+
+  {{end}}
+
+{{end}}
+</p>
+</body>
+</html>
