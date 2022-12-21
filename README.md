@@ -10,7 +10,7 @@ server administrators remain control of the data.
 
 Source code: on [github][github].
 
-[torch]: https://torchapi.net/
+[torch]: https://torchapi.com/
 [space-engineers]: https://www.spaceengineersgame.com/
 [github]: https://github.com/StalkR/Space-Engineers-Link-Steam-Discord
 
@@ -25,7 +25,7 @@ haven't linked yet, it will open their browser to the linking backend.
 
 Server admininistrators can configure the backend URL in the plugin settings.
 
-[plugin]: https://torchapi.net/plugins/item/64827390-c847-41fb-adc3-2719b1d1b536
+[plugin]: https://torchapi.com/plugins/view/64827390-c847-41fb-adc3-2719b1d1b536
 
 ## Backend
 
@@ -60,7 +60,7 @@ anyone can query, and does not authenticate steam ID so fake mappings can be
 inserted.
 
 [bish]: https://github.com/Bishbash777
-[sedb]: https://torchapi.net/plugins/item/3cd3ba7f-c47c-4efe-8cf1-bd3f618f5b9c
+[sedb]: https://torchapi.com/plugins/view/3cd3ba7f-c47c-4efe-8cf1-bd3f618f5b9c
 [sedb-github]: https://github.com/Bishbash777/SEDB-RELOADED
 
 ## Bugs, comments, questions
