@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{062B6DFE-2B24-4671-B0BA-AE6F260F2F1F}</ProjectGuid>
     <TargetFramework>net48</TargetFramework>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <OutputType>Library</OutputType>
