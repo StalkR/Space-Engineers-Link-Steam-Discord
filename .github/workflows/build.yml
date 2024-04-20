@@ -1,0 +1,62 @@
+name: build
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+  schedule:
+    - cron: '0 6 * * 1' # weekly (every monday at 6 am UTC)
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.21'
+          check-latest: true
+      - run: go install golang.org/x/lint/golint@latest
+      - run: cd backend; go build -v ./...
+      - run: cd backend; go test -v ./...
+      - run: cd backend; go vet ./...
+      - run: cd backend; golint -set_exit_status ./...
+
+  build-plugin:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup Torch
+        shell: bash
+        run: |
+          mkdir plugin/.TorchBinaries
+          cd plugin/.TorchBinaries
+          curl 'https://build.torchapi.com/job/Torch/job/master/lastSuccessfulBuild/artifact/bin/torch-server.zip' > torch.zip
+          unzip torch.zip
+
+      - name: setup DepotDownloader
+        shell: bash
+        run: |
+          mkdir depotdownloader
+          cd depotdownloader
+          curl -L 'https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.5.0/depotdownloader-2.5.0.zip' > depotdownloader.zip
+          unzip depotdownloader.zip
+
+      - name: setup Space Engineers
+        shell: bash
+        run: |
+          echo 'regex:^DedicatedServer64/' > filelist.txt
+          # https://steamdb.info/app/298740/depots/
+          depotdownloader/DepotDownloader.exe -app 298740 -depot 298741 -filelist filelist.txt -dir .
+          mv DedicatedServer64 plugin/.GameBinaries
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: build
+        run: cd plugin && dotnet build --configuration Release
