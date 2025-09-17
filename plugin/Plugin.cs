@@ -1,16 +1,14 @@
-using NLog;
 using System.IO;
 using System.Windows.Controls;
 using Torch;
 using Torch.API;
 using Torch.API.Plugins;
+using VRage.Utils;
 
 namespace StalkR.LinkSteamDiscord
 {
-    public class LinkSteamDiscordPlugin : TorchPluginBase, IWpfPlugin
+    public class Plugin : TorchPluginBase, IWpfPlugin
     {
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-
         private Persistent<Config> _config;
         public Config Config => _config?.Data;
         public void Save() => _config?.Save();
@@ -23,7 +21,7 @@ namespace StalkR.LinkSteamDiscord
             base.Init(torch);
 
             string path = Path.Combine(StoragePath, "LinkSteamDiscord.cfg");
-            Log.Info($"Attempting to load config from {path}");
+            MyLog.Default.WriteLine($"LinkSteamDiscord: loading config from {path}");
             _config = Persistent<Config>.Load(path);
         }
     }

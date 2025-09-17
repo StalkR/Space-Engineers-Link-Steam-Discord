@@ -9,7 +9,7 @@ namespace StalkR.LinkSteamDiscord
 {
     public class Command : CommandModule
     {
-        private LinkSteamDiscordPlugin _plugin => (LinkSteamDiscordPlugin)Context.Plugin;
+        private Plugin _plugin => (Plugin)Context.Plugin;
 
         [Command("link", "Link your Steam & Discord accounts")]
         [Permission(MyPromoteLevel.None)]

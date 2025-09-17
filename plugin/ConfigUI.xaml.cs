@@ -6,14 +6,14 @@ namespace StalkR.LinkSteamDiscord
 
     public partial class ConfigUI : UserControl
     {
-        private LinkSteamDiscordPlugin Plugin { get; }
+        private Plugin Plugin { get; }
 
         public ConfigUI()
         {
             InitializeComponent();
         }
 
-        public ConfigUI(LinkSteamDiscordPlugin plugin) : this()
+        public ConfigUI(Plugin plugin) : this()
         {
             Plugin = plugin;
             DataContext = plugin.Config;
